@@ -1,0 +1,19 @@
+{
+  "name": "comicserver",
+  "version": "0.0.1",
+  "description": "Comic Server written in Node.js - WIP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeromeDane/comicserver.git"
+  },
+  "author": "Jerome Dane <jerome.dane@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JeromeDane/comicserver/issues"
+  },
+  "homepage": "https://github.com/JeromeDane/comicserver#readme"
+}
