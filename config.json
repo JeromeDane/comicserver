@@ -1,4 +1,5 @@
 {
   "libraryPath": "/home/jerome/Comics",
-  "port": "9091"
+  "port": "9091",
+  "webpackPort": "9092"
 }

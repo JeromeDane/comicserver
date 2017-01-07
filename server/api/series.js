@@ -1,4 +1,4 @@
-const library = require('./lib/library')
+const library = require('../lib/library')
 
 module.exports = (req, res) => {
   library.find({ $where: function() { return Boolean(this.series) }}, (err, comics) => {
@@ -10,6 +10,5 @@ module.exports = (req, res) => {
       }, [])
       res.send(JSON.stringify(series.sort()))
     }
-
   })
 }

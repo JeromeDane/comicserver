@@ -6,6 +6,8 @@
   "scripts": {
     "start": "node server/index.js",
     "dev": "nodemon server/index.js",
+    "scan": "nodemon server/scan-library.js",
+    "build": "webpack --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,10 +23,15 @@
   "dependencies": {
     "adm-zip": "0.4.7",
     "express": "^4.14.0",
+    "html-webpack-plugin": "^2.26.0",
+    "json-loader": "^0.5.4",
     "nedb": "1.8.0",
+    "webpack": "1.14.0",
     "xml2js": "0.4.17"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "http-proxy": "^1.16.2",
+    "nodemon": "^1.11.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }
