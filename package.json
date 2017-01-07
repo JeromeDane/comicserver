@@ -4,6 +4,8 @@
   "description": "Comic Server written in Node.js - WIP",
   "main": "index.js",
   "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/JeromeDane/comicserver/issues"
   },
-  "homepage": "https://github.com/JeromeDane/comicserver#readme"
+  "homepage": "https://github.com/JeromeDane/comicserver#readme",
+  "dependencies": {
+    "adm-zip": "0.4.7",
+    "express": "^4.14.0",
+    "nedb": "1.8.0",
+    "xml2js": "0.4.17"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }
