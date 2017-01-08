@@ -9,8 +9,14 @@
     "es6": true,
     "mocha": true
   },
+  "plugins": [
+    "react"
+  ],
   "parserOptions": {
-      "sourceType": "module"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "extends": "eslint:recommended",
   "rules": {
@@ -77,13 +83,6 @@
       }
     }],
     "linebreak-style": ["error", "unix"],
-    "lines-around-comment": ["error", {
-      "beforeBlockComment": true,
-      "beforeLineComment": true,
-      "allowBlockStart": true,
-      "allowObjectStart": true,
-      "allowArrayStart": true
-    }],
     "new-parens": "error",
     "no-lonely-if": "error",
     "no-multiple-empty-lines": ["error", {"max": 1}],
@@ -94,6 +93,7 @@
     "quotes": ["error", "single"],
     "semi": ["error", "never"],
     "no-extra-semi": "error",
+    "react/jsx-uses-vars": [2],
     "semi-spacing": ["error", {"before": false, "after": true}],
     "space-before-blocks": "error",
     "space-before-function-paren": ["error", "never"],
