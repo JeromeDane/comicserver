@@ -1,6 +1,8 @@
 /* eslint no-console: 0 */
 
 const express = require('express'),
+      fs = require('fs'),
+      path = require('path'),
       webpack = require('webpack'),
       webpackConfig = require('../webpack.config.js'),
       WebpackDevServer = require('webpack-dev-server'),
@@ -46,11 +48,13 @@ webpackDevServer.listen(webpackPort)
 
 app.use(express.static('public'))
 
-app.get('/api/files/?', require('./api/files.js'))
-app.get('/api/series/?', require('./api/series.js'))
-app.get('/api/characters/?', require('./api/characters.js'))
-// app.get('/api/scan-library/?', require('./scan-library.js'))
-
+// initialize api paths
+fs.readdirSync(path.join(__dirname, 'api')).forEach(file => {
+  if(file.match(/\.js$/)) {
+    const method = file.replace(/\.js$/, '')
+    app.get('/api/' + method + '(/?|/*)$', require('./api/' + method + '.js'))
+  }
+})
 app.get('*', function(req, res) { webpackProxy.web(req, res) })
 
 const startAppServer = () => app.listen(port, () => {

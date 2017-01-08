@@ -37,7 +37,7 @@ const parseXmlFields = (comic, xml) => {
           AlternateSeries: null,
           Summary: null,
           Notes: null,
-          Writer: null,
+          Writer: splitCommaDel,
           Penciller: null,
           Inker: null,
           Colorist: null,
@@ -50,6 +50,15 @@ const parseXmlFields = (comic, xml) => {
           Characters: splitCommaDel,
           Teams: splitCommaDel,
           Locations: splitCommaDel
+        },
+        rename = {
+          writer: 'writers',
+          coverArtist: 'coverArtists',
+          penciller: 'pencillers',
+          inker: 'inkers',
+          colorist: 'colorists',
+          letterer: 'letterers',
+          editor: 'editors'
         }
   Object.keys(xmlFields).forEach(field => {
     if(xml[field]) {
@@ -57,6 +66,12 @@ const parseXmlFields = (comic, xml) => {
         typeof xmlFields[field] === 'function'
           ? xmlFields[field](xml[field][0])
           : xml[field][0]
+    }
+  })
+  Object.keys(rename).forEach(field => {
+    if(comic[field]) {
+      comic[rename[field]] = comic[field]
+      delete comic[field]
     }
   })
 }

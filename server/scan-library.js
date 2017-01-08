@@ -23,8 +23,5 @@ const scanNextFile = (files, i, resolve) => {
 
 // module.exports = (req, res) => {
   // res.writeHead(200, { 'Content-Type': 'text/plain' })
-  let numScanned = 0
-
-  const files = getLibraryFiles(cfg.libraryPath)
-  scanNextFile(files, 0, () => console.log('DONE!'))
+  scanNextFile(getLibraryFiles(cfg.libraryPath), 0, () => console.log('DONE!'))
 // }

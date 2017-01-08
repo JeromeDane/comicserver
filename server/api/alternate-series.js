@@ -3,6 +3,6 @@ const library = require('../lib/library'),
 
 module.exports = (req, res) => getUniqueEntities({
   db: library,
-  field: 'characters',
+  field: 'alternateSeries',
   resolve: entities => res.send(entities)
 })
